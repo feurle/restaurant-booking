@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Tisch Reservierung</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>Reservierung</h1>
+
+<p>Tisch Id: <span th:text="${table.id}"></span></p>
+
+<p>von Uhrzeit: <span th:text="${table.fromTime}"></span></p>
+
+<p>bis Uhrzeit: <span th:text="${table.toTime}"></span></p>
+
+<p>Anzahl Personen: <span th:text="${table.numberOfPersons}"></span></p>
+
+<p>wer hat reserviert: <span th:text="${table.personName}"></span></p>
+
+<p>Kontakt: <span th:text="${table.contactData}"></span></p>
+
+<p>
+    <a href="/table">Neue Reservierung</a> |
+    <a href="/table/all">Alle Reservierungen</a> |
+    <a th:href="@{/table/delete(id = ${table.id})}">Reservierung löschen</a>
+</p>
+
+</body>
+</html>

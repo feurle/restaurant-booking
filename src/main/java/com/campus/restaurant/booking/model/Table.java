@@ -1,6 +1,13 @@
 package com.campus.restaurant.booking.model;
 
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity(name = "t_table")
@@ -10,19 +17,17 @@ public class Table implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "from_time")
-    private Integer from;
+    private Integer fromTime;
 
-    @Column(name = "to_time")
-    private Integer to;
+    private Integer toTime;
 
-    @Column
     private Integer numberOfPersons;
 
     @Column(length = 25)
     private String personName;
 
-
+    @Column(length = 25)
+    private String contactData;
 
     public Integer getId() {
         return id;
@@ -32,20 +37,20 @@ public class Table implements Serializable {
         this.id = id;
     }
 
-    public Integer getFrom() {
-        return from;
+    public Integer getFromTime() {
+        return fromTime;
     }
 
-    public void setFrom(Integer from) {
-        this.from = from;
+    public void setFromTime(Integer fromTime) {
+        this.fromTime = fromTime;
     }
 
-    public Integer getTo() {
-        return to;
+    public Integer getToTime() {
+        return toTime;
     }
 
-    public void setTo(Integer to) {
-        this.to = to;
+    public void setToTime(Integer toTime) {
+        this.toTime = toTime;
     }
 
     public Integer getNumberOfPersons() {
@@ -60,7 +65,15 @@ public class Table implements Serializable {
         return personName;
     }
 
-    public void setPersonName(String name) {
-        this.personName = name;
+    public void setPersonName(String personName) {
+        this.personName = personName;
+    }
+
+    public String getContactData() {
+        return contactData;
+    }
+
+    public void setContactData(String contactData) {
+        this.contactData = contactData;
     }
 }
