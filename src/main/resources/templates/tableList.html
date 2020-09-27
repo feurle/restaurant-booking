@@ -5,25 +5,33 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+
 <h1>Alle Reservierungen</h1>
 
-<table>
+<p><a href="/">home</a></p>
+
+<table border="1">
     <tr>
         <th>Id</th><th>von</th><th>bis</th><th>Anzahl</th><th>Name</th><th>Kontakt</th><th>Aktion</th>
     </tr>
     <tr th:each="table: ${tableList}">
-        <td><a th:href="@{/table/view(id = ${table.id})}"><span th:text="${table.id}" /></a></td>
-        <td th:text="${table.fromTime}" />
-        <td th:text="${table.toTime}" />
-        <td th:text="${table.numberOfPersons}" />
-        <td th:text="${table.personName}" />
-        <td th:text="${table.contactData}" />
-        <td><a th:href="@{/table/edit(id = ${table.id})}">edit</a> | <a th:href="@{/table/view(id = ${table.id})}">view</a> | del</td>
+        <td>
+            <a th:href="@{/table/view(id = ${table.id})}"><span th:text="${table.id}" /></a>
+        </td>
+        <td><span th:text="${table.fromTime}" /></td>
+        <td><span th:text="${table.toTime}" /></td>
+        <td><span th:text="${table.numberOfPersons}" /></td>
+        <td><span th:text="${table.personName}" /></td>
+        <td><span th:text="${table.contactData}" /></td>
+        <td>
+            <a th:href="@{/table/view(id = ${table.id})}">edit</a> |
+            <a th:href="@{/table/view(id = ${table.id})}">view</a> |
+            <a th:href="@{/table/delete(id = ${table.id})}">delete</a>
+        </td>
     </tr>
 </table>
 
-<p>
-    <a href="/table">Neue Reservierung</a>
-</p>
+<p><a href="/table">Neue Reservierung</a> | <a th:href="@{/api/tables}">JSON</a></p>
+
 </body>
 </html>

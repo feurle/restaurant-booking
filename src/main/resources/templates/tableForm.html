@@ -5,7 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Eingabe</h1>
+
+<h1>Neue Reservierung</h1>
+
+<p><a href="/">home</a></p>
+
 <form action="#" th:action="@{/table}" th:object="${table}" method="post">
     <p>von: <input type="text" th:field="*{fromTime}" /></p>
     <p>bis: <input type="text" th:field="*{toTime}" /></p>
