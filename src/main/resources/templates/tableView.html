@@ -21,8 +21,10 @@
     <a href="/table">Neue Reservierung</a> |
     <a href="/table/all">Alle Reservierungen</a> |
     <a th:href="@{/table/delete(id = ${table.id})}">Reservierung löschen</a> |
-    <a th:href="@{/api/tables/{id}(id = ${table.id})}">JSON</a>
-</p>
 
+</p>
+<p>
+    JSON GET Resource <a th:href="@{/api/tables/{id}(id = ${table.id})}">/api/tables/<span th:text="${table.id}"/></a>
+</p>
 </body>
 </html>
